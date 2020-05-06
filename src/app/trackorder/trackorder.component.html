@@ -1,0 +1,75 @@
+<div class="form-group">
+	<h2 align=center class="text-white">TRACK ORDER FORM</h2>
+</div>
+<form  #myForm="ngForm">
+  <div class="form-group">
+  <table align=center>
+    <tr>
+        <th><h5 class="text-white">RAWMATERIAL ORDERID</h5></th>
+        <td>
+            <div class="form-group">
+                    <input type=number min=1234 max=123456 required #ord="ngModel" [class.is-invalid]="ord.touched && ord.invalid " name="orderId" class="form-control" [(ngModel)]="orderId">
+                    <div *ngIf="ord.errors && ord.touched">
+                            <small class="text-danger"    *ngIf="ord.errors.required">OrderId is required</small>
+                        </div>
+            </div>
+        </td> 
+    </tr>
+    <tr>
+    <td>
+      <div class="form-group">
+        <input type=submit value="SUBMIT" [disabled]="myForm.invalid" class="btn btn-primary text-white" (click)="trackOrder()">
+      </div>
+    </td>
+      <td>
+				<div class="form-group">
+					<input type=reset value="CANCEL" class="btn btn-warning text-white">
+				</div>
+			</td>
+    </tr>
+  </table>
+  </div>
+  </form>
+  <div class="container">
+    <div *ngIf="dis">
+  <table align=center class="table table-striped text-white table-bordered">
+    
+    <thead>
+    <tr>
+      <th>orderId</th>
+      <th>rawmaterialname</th>
+      <th>priceperunit</th>
+      <th>quantityvalue</th>
+          <th>totalprice</th>
+      <th>warehouseId</th>
+          <th>supplierId</th>
+          <th>dateoforder</th>
+          <th>dateofdelivery</th>
+          <th>manufacturingdate</th>
+          <th>expirydate</th>
+          <th>deliverystatus</th>
+          <th>rawmaterialid</th>
+      
+    </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{orders.orderId}}</td>
+        <td>{{orders.rawmaterialname}}</td>
+        <td>{{orders.priceperunit}}</td>
+        <td>{{orders.quantityvalue}}</td>
+        <td>{{orders.totalprice}}</td>
+        <td>{{orders.warehouseId}}</td>
+            <td>{{orders.supplierId}}</td>
+            <td>{{orders.dateoforder}}</td>
+            <td>{{orders.dateofdelivery}}</td>
+            <td>{{orders.manufacturingdate}}</td>
+            <td>{{orders.expirydate}}</td>
+            <td>{{orders.deliverystatus}}</td>
+            <td>{{orders.rawmaterialId}}</td>
+      </tr> 
+      </tbody>
+  </table>
+    </div>
+  </div>
+  

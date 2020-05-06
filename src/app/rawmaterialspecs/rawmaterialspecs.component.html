@@ -1,0 +1,40 @@
+<form  #myForm="ngForm">
+  <div class="form-group">
+  <table align=center>
+<td>
+  <div class="form-group">
+    <input type=submit value="DISPLAY ALL RAWMATERIALS" [disabled]="myForm.invalid" class="btn btn-primary text-white" (click)="displaySpecs()">
+  </div>
+</td>
+  </table>
+  </div>
+</form>
+<div class="container">
+    <div *ngIf="dis">
+  <table align=center class="table table-striped text-white table-bordered">
+    
+    <thead>
+      <tr>
+          <th>rawmaterialId</th>
+          <th>rawmaterialname</th>
+          <th>priceperunit</th>
+          <th>manufacturingdate</th>
+          <th>expirydate</th>
+          <th>supplierId</th>
+          <th>warehouseId</th>    
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let t of orders">
+          <td>{{t.rawmaterialId}}</td>
+          <td>{{t.rawmaterialname}}</td>
+          <td>{{t.priceperunit}}</td>
+          <td>{{t.manufacturingdate}}</td>
+          <td>{{t.expirydate}}</td>
+          <td>{{t.supplierId}}</td>
+          <td>{{t.warehouseId}}</td>
+    </tr> 
+    </tbody>
+  </table>
+    </div>
+  </div>

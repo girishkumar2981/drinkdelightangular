@@ -1,0 +1,49 @@
+
+<div class="form-group">
+	<h2 align=center class="text-white">UPDATE ORDER FORM</h2>
+</div>
+<form  #myForm="ngForm">
+  <div class="form-group">
+  <table align=center>
+    <tr>
+      <th><h5 class="text-white">RAWMATERIAL ORDERID</h5></th>
+      <td>
+          <div class="form-group">
+                  <input type=number min=1234 max=123456 required #ord="ngModel" [class.is-invalid]="ord.touched && ord.invalid " name="orderId" class="form-control" [(ngModel)]="orderId">
+                  <div *ngIf="ord.errors && ord.touched">
+                          <small class="text-danger"    *ngIf="ord.errors.required">OrderId is required</small>
+                      </div>
+          </div>
+      </td> 
+  </tr>
+  <tr>
+    <th><h5 class="text-white">DELIVERY STATUS</h5></th>
+    <td>
+<div class="form-group">
+<input type=text required #ord="ngModel" [class.is-invalid]="ord.touched && ord.invalid " name="deliverystatus" class="form-control" [(ngModel)]="deliverystatus">
+<div *ngIf="ord.errors && ord.touched">
+     <small class="text-danger"    *ngIf="ord.errors.required">deliverystatus is required</small>
+</div>
+</div>
+</td>
+</tr>
+    <tr>
+      <td>
+        <div class="form-group">
+          <input type=submit value="UPDATEORDER" [disabled]="myForm.invalid" class="btn btn-primary text-white" (click)="updateOrder()">
+        </div>
+      </td>
+        <td>
+          <div class="form-group">
+            <input type=reset value="CANCEL" class="btn btn-warning text-white">
+          </div>
+        </td>
+      </tr>
+  </table>
+  </div>
+  </form>
+  <table align=center>
+  <div class="container">
+    <h5 class="text-success">{{message}}</h5>
+  </div>
+</table>
