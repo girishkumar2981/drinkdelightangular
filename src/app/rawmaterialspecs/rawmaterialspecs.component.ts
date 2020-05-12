@@ -11,7 +11,9 @@ import { RawMaterialSpecs } from '../Dto/RawMaterialSpecs';
 export class RawmaterialspecsComponent implements OnInit {
   dis: boolean=false;
   orders: RawMaterialSpecs[] = [];
-
+  renderer:boolean = false;
+  rawmaterialspes:RawMaterialSpecs;
+  quantityvalue : number;
   constructor(private service: ServiceService,private router: Router) { }
 
   ngOnInit(): void {
@@ -20,12 +22,23 @@ export class RawmaterialspecsComponent implements OnInit {
   {
  this.dis=true;
  this.service.displaySpecs().subscribe(data =>{
-  for(var i of data.orders)
+  for(var i of data)
   {
       this.orders.push(i);
   }
-  console.log(data.orders);
+  console.log(data);
 }); 
+  }
+
+  public orderPlaced(rawmaterialspes:RawMaterialSpecs):void
+  {
+    this.rawmaterialspes = rawmaterialspes;
+    this.renderer = true;
+  }
+
+  public placedorder():void
+  {
+    this.service.placedorder1(this.rawmaterialspes,this.quantityvalue).subscribe(data => console.log(data));
   }
 
 }

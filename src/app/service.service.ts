@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import { RawMaterialSpecs } from './Dto/RawMaterialSpecs';
 @Injectable({
   providedIn: 'root'
 })
@@ -26,5 +27,9 @@ export class ServiceService {
   public displaySpecs() :Observable<any>
   {
     return this.httpService.get<any>('http://localhost:8095/GetAllRawMaterialSpecs');
+  }
+  public placedorder1(rawmaterialspes:RawMaterialSpecs,quantityvalue:number) : Observable<any>
+  {
+     return this.httpService.post<any>('http://localhost:8195/placeorder/'+quantityvalue,rawmaterialspes,{responseType: 'text' as 'json'});
   }
 }

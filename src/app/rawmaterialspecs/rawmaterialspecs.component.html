@@ -3,7 +3,7 @@
   <table align=center>
 <td>
   <div class="form-group">
-    <input type=submit value="DISPLAY ALL RAWMATERIALS" [disabled]="myForm.invalid" class="btn btn-primary text-white" (click)="displaySpecs()">
+    <input type=submit value="LIST OF RAWMATERIALS TO BUY" [disabled]="myForm.invalid" class="btn btn-primary text-white" (click)="displaySpecs()">
   </div>
 </td>
   </table>
@@ -22,6 +22,7 @@
           <th>expirydate</th>
           <th>supplierId</th>
           <th>warehouseId</th>    
+          <th>click</th>
     </tr>
     </thead>
     <tbody>
@@ -33,8 +34,97 @@
           <td>{{t.expirydate}}</td>
           <td>{{t.supplierId}}</td>
           <td>{{t.warehouseId}}</td>
+          <td>
+          <div class="form-group">
+            <input type=submit value="submit" class="btn btn-primary text-white" (click)="orderPlaced(t)">
+          </div>
+        </td>
     </tr> 
     </tbody>
   </table>
     </div>
+  </div>
+  <div *ngIf="renderer">
+    <form  #myForm="ngForm">
+      <div class="form-group">
+      <table align=center>
+        <tr>
+          <th><h5 class="text-white">rawmaterialId</h5></th>
+          <td>
+    <div class="form-group">
+              <input type=text required #ord="ngModel"  name="rawmaterialId" class="form-control" [(ngModel)]="rawmaterialspes.rawmaterialId">
+      </div>
+          </td>
+  </tr>
+  <tr>
+    <th><h5 class="text-white">rawmaterialname</h5></th>
+    <td>
+<div class="form-group">
+        <input type=text required #ord="ngModel"  name="rawmaterialname" class="form-control" [(ngModel)]="rawmaterialspes.rawmaterialname">
+</div>
+    </td>
+</tr>
+<tr>
+  <th><h5 class="text-white">priceperunit</h5></th>
+  <td>
+<div class="form-group">
+      <input type=text required #ord="ngModel"  name="priceperunit" class="form-control" [(ngModel)]="rawmaterialspes.priceperunit">
+</div>
+  </td>
+</tr>
+<tr>
+  <th><h5 class="text-white">manufacturingdate</h5></th>
+  <td>
+<div class="form-group">
+      <input type=text required #ord="ngModel"  name="manufacturingdate" class="form-control" [(ngModel)]="rawmaterialspes.manufacturingdate">
+</div>
+  </td>
+</tr>
+<tr>
+  <th><h5 class="text-white">expirydate</h5></th>
+  <td>
+<div class="form-group">
+      <input type=text required #ord="ngModel"  name="expirydate" class="form-control" [(ngModel)]="rawmaterialspes.expirydate">
+</div>
+  </td>
+</tr>
+<tr>
+  <th><h5 class="text-white">supplierId</h5></th>
+  <td>
+<div class="form-group">
+      <input type=text required #ord="ngModel"  name="supplierId" class="form-control" [(ngModel)]="rawmaterialspes.supplierId">
+</div>
+  </td>
+  <tr>
+    <th><h5 class="text-white">warehouseId</h5></th>
+    <td>
+  <div class="form-group">
+        <input type=text required #ord="ngModel"  name="warehouseId" class="form-control" [(ngModel)]="rawmaterialspes.warehouseId">
+  </div>
+    </td>
+</tr>
+<tr>
+  <th><h5 class="text-white">quantityvalue</h5></th>
+  <td>
+<div class="form-group">
+      <input type=text required #ord="ngModel"  name="quantityvalue" class="form-control" [(ngModel)]="quantityvalue">
+</div>
+  </td>
+</tr>
+<tr>
+  <td>
+    <div class="form-group">
+      <input type=submit value="PLACE ORDER"  class="btn btn-primary text-white" (click)="placedorder()">
+    </div>
+  </td>
+    <td>
+      <div class="form-group">
+        <input type=reset value="CANCEL" class="btn btn-warning text-white">
+      </div>
+    </td>
+  </tr>
+</table>
+      </div>
+    </form>
+
   </div>
