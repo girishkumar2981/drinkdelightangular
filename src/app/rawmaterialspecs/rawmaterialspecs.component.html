@@ -52,7 +52,7 @@
           <th><h5 class="text-white">rawmaterialId</h5></th>
           <td>
     <div class="form-group">
-              <input type=text required #ord="ngModel"  name="rawmaterialId" class="form-control" [(ngModel)]="rawmaterialspes.rawmaterialId">
+              <input type=text required disabled #ord="ngModel"  name="rawmaterialId" class="form-control" [(ngModel)]="rawmaterialspes.rawmaterialId">
       </div>
           </td>
   </tr>
@@ -60,7 +60,7 @@
     <th><h5 class="text-white">rawmaterialname</h5></th>
     <td>
 <div class="form-group">
-        <input type=text required #ord="ngModel"  name="rawmaterialname" class="form-control" [(ngModel)]="rawmaterialspes.rawmaterialname">
+        <input type=text required disabled #ord="ngModel"  name="rawmaterialname" class="form-control" [(ngModel)]="rawmaterialspes.rawmaterialname">
 </div>
     </td>
 </tr>
@@ -68,7 +68,7 @@
   <th><h5 class="text-white">priceperunit</h5></th>
   <td>
 <div class="form-group">
-      <input type=text required #ord="ngModel"  name="priceperunit" class="form-control" [(ngModel)]="rawmaterialspes.priceperunit">
+      <input type=text required disabled #ord="ngModel"  name="priceperunit" class="form-control" [(ngModel)]="rawmaterialspes.priceperunit">
 </div>
   </td>
 </tr>
@@ -76,7 +76,7 @@
   <th><h5 class="text-white">manufacturingdate</h5></th>
   <td>
 <div class="form-group">
-      <input type=text required #ord="ngModel"  name="manufacturingdate" class="form-control" [(ngModel)]="rawmaterialspes.manufacturingdate">
+      <input type=text required disabled #ord="ngModel"  name="manufacturingdate" class="form-control" [(ngModel)]="rawmaterialspes.manufacturingdate">
 </div>
   </td>
 </tr>
@@ -84,7 +84,7 @@
   <th><h5 class="text-white">expirydate</h5></th>
   <td>
 <div class="form-group">
-      <input type=text required #ord="ngModel"  name="expirydate" class="form-control" [(ngModel)]="rawmaterialspes.expirydate">
+      <input type=text required disabled #ord="ngModel"  name="expirydate" class="form-control" [(ngModel)]="rawmaterialspes.expirydate">
 </div>
   </td>
 </tr>
@@ -92,14 +92,14 @@
   <th><h5 class="text-white">supplierId</h5></th>
   <td>
 <div class="form-group">
-      <input type=text required #ord="ngModel"  name="supplierId" class="form-control" [(ngModel)]="rawmaterialspes.supplierId">
+      <input type=text required disabled #ord="ngModel"  name="supplierId" class="form-control" [(ngModel)]="rawmaterialspes.supplierId">
 </div>
   </td>
   <tr>
     <th><h5 class="text-white">warehouseId</h5></th>
     <td>
   <div class="form-group">
-        <input type=text required #ord="ngModel"  name="warehouseId" class="form-control" [(ngModel)]="rawmaterialspes.warehouseId">
+        <input type=text required disabled #ord="ngModel"  name="warehouseId" class="form-control" [(ngModel)]="rawmaterialspes.warehouseId">
   </div>
     </td>
 </tr>
@@ -128,3 +128,8 @@
     </form>
 
   </div>
+  <table align=center>
+    <div class="container">
+      <h5 class="text-success">{{message}}</h5>
+    </div>
+  </table>

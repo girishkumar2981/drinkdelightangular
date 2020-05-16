@@ -1,22 +1,22 @@
 <div class="form-group">
-	<h2 align=center class="text-white">DISPLAY SUPPLIER FORM</h2>
+	<h2 align=center class="text-white">DISPLAY DISTRIBUTOR FORM</h2>
 </div>
 <form  #myForm="ngForm">
     <div class="form-group">
     <table align=center>
         <tr>
-			<th><h5 class="text-white">SUPPLIER ID</h5></th>
+			<th><h5 class="text-white">DISTRIBUTOR ID</h5></th>
 			<div class="form-group">
-                <input type=text required #ord="ngModel" [class.is-invalid]="ord.touched && ord.invalid " name="supplierId" class="form-control" [(ngModel)]="supplierId">
+                <input type=text required #ord="ngModel" [class.is-invalid]="ord.touched && ord.invalid " name="distributorId" class="form-control" [(ngModel)]="distributorId">
                 <div *ngIf="ord.errors && ord.touched">
-                        <small class="text-danger"    *ngIf="ord.errors.required">SupplierId is required</small>
+                        <small class="text-danger"    *ngIf="ord.errors.required">DistributorId is required</small>
                     </div>
         </div>
     </tr>
     <tr>
       <td>
         <div class="form-group">
-          <input type=submit value="SUBMIT" [disabled]="myForm.invalid" class="btn btn-primary text-white" (click)="displaySupplier()">
+          <input type=submit value="SUBMIT" [disabled]="myForm.invalid" class="btn btn-primary text-white" (click)="displayDistributor()">
         </div>
       </td>
         <td>
@@ -34,7 +34,7 @@
     
     <thead>
     <tr>
-      <th>supplierId</th>
+      <th>distributorId</th>
       <th>name</th>
       <th>address</th>
       <th>phoneno</th>
@@ -42,7 +42,7 @@
     </thead>
     <tbody>
     <tr>
-      <td>{{orders.supplierId}}</td>
+      <td>{{orders.distributorId}}</td>
       <td>{{orders.name}}</td>
       <td>{{orders.address}}</td>
       <td>{{orders.phoneno}}</td>
@@ -51,8 +51,3 @@
   </table>
     </div>
   </div>
-  <table align=center>
-    <div class="container">
-      <h5 class="text-success">{{message}}</h5>
-    </div>
-  </table>

@@ -1,0 +1,131 @@
+<form  #myForm="ngForm">
+    <div class="form-group">
+    <table align=center>
+  <td>
+    <div class="form-group">
+      <input type=submit value="LIST OF PRODUCTS TO BUY" [disabled]="myForm.invalid" class="btn btn-primary text-white" (click)="displaySpecs()">
+    </div>
+  </td>
+    </table>
+    </div>
+  </form>
+  <div class="container">
+      <div *ngIf="dis">
+    <table align=center class="table table-striped text-white table-bordered">
+      
+      <thead>
+        <tr>
+            <th>productId</th>
+            <th>productname</th>
+            <th>priceperunit</th>
+            <th>manufacturingdate</th>
+            <th>expirydate</th>
+            <th>distributorId</th>
+            <th>warehouseId</th>    
+            <th>click</th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let t of orders">
+            <td>{{t.productId}}</td>
+            <td>{{t.productname}}</td>
+            <td>{{t.priceperunit}}</td>
+            <td>{{t.manufacturingdate}}</td>
+            <td>{{t.expirydate}}</td>
+            <td>{{t.distributorId}}</td>
+            <td>{{t.warehouseId}}</td>
+            <td>
+            <div class="form-group">
+              <input type=submit value="submit" class="btn btn-primary text-white" (click)="orderPlaced(t)">
+            </div>
+          </td>
+      </tr> 
+      </tbody>
+    </table>
+      </div>
+    </div>
+    <div *ngIf="renderer">
+      <form  #myForm="ngForm">
+        <div class="form-group">
+        <table align=center>
+          <tr>
+            <th><h5 class="text-white">productId</h5></th>
+            <td>
+      <div class="form-group">
+                <input type=text required #ord="ngModel"  name="productId" class="form-control" [(ngModel)]="productspes.productId">
+        </div>
+            </td>
+    </tr>
+    <tr>
+      <th><h5 class="text-white">productname</h5></th>
+      <td>
+  <div class="form-group">
+          <input type=text required #ord="ngModel"  name="productname" class="form-control" [(ngModel)]="productspes.productname">
+  </div>
+      </td>
+  </tr>
+  <tr>
+    <th><h5 class="text-white">priceperunit</h5></th>
+    <td>
+  <div class="form-group">
+        <input type=text required #ord="ngModel"  name="priceperunit" class="form-control" [(ngModel)]="productspes.priceperunit">
+  </div>
+    </td>
+  </tr>
+  <tr>
+    <th><h5 class="text-white">manufacturingdate</h5></th>
+    <td>
+  <div class="form-group">
+        <input type=text required #ord="ngModel"  name="manufacturingdate" class="form-control" [(ngModel)]="productspes.manufacturingdate">
+  </div>
+    </td>
+  </tr>
+  <tr>
+    <th><h5 class="text-white">expirydate</h5></th>
+    <td>
+  <div class="form-group">
+        <input type=text required #ord="ngModel"  name="expirydate" class="form-control" [(ngModel)]="productspes.expirydate">
+  </div>
+    </td>
+  </tr>
+  <tr>
+    <th><h5 class="text-white">distributorId</h5></th>
+    <td>
+  <div class="form-group">
+        <input type=text required #ord="ngModel"  name="distributorId" class="form-control" [(ngModel)]="productspes.distributorId">
+  </div>
+    </td>
+    <tr>
+      <th><h5 class="text-white">warehouseId</h5></th>
+      <td>
+    <div class="form-group">
+          <input type=text required #ord="ngModel"  name="warehouseId" class="form-control" [(ngModel)]="productspes.warehouseId">
+    </div>
+      </td>
+  </tr>
+  <tr>
+    <th><h5 class="text-white">quantityvalue</h5></th>
+    <td>
+  <div class="form-group">
+        <input type=text required #ord="ngModel"  name="quantityvalue" class="form-control" [(ngModel)]="quantityvalue">
+  </div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <div class="form-group">
+        <input type=submit value="PLACE ORDER"  class="btn btn-primary text-white" (click)="placedorder()">
+      </div>
+    </td>
+      <td>
+        <div class="form-group">
+          <input type=reset value="CANCEL" class="btn btn-warning text-white">
+        </div>
+      </td>
+    </tr>
+  </table>
+        </div>
+      </form>
+  
+    </div>
+  

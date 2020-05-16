@@ -3,11 +3,11 @@ import { UserDetails } from '../login/user.details';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-cover',
+  templateUrl: './cover.component.html',
+  styleUrls: ['./cover.component.css']
 })
-export class HomeComponent implements OnInit {
+export class CoverComponent implements OnInit {
 
   constructor(private userDetails:UserDetails,private router:Router) { }
 

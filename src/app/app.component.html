@@ -1,1 +1,11 @@
-<app-home></app-home>
+<div class="container my-3">
+	<table align=center>
+	<h1 style="color:rgb(239, 250, 250)">Drink and Delight Inventory Management System</h1>
+	</table>
+</div>
+<div class="container" *ngIf="render">
+	<table align=center>
+<button routerLink="login" class="btn btn-secondary" (click)="clicked()">Login</button>
+	</table>
+</div>
+<router-outlet></router-outlet>

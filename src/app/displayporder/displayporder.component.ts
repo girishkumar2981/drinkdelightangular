@@ -1,22 +1,21 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductOrder } from '../Dto/ProductOrder';
+import { ServiceService } from '../service.service';
 import { Router } from '@angular/router';
-import { ServiceService} from '../service.service';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
-import { RawMaterialOrder } from '../Dto/RawMaterialOrder';
+
 @Component({
-  selector: 'app-displayorder',
-  templateUrl: './displayorder.component.html',
-  styleUrls: ['./displayorder.component.css']
+  selector: 'app-displayporder',
+  templateUrl: './displayporder.component.html',
+  styleUrls: ['./displayporder.component.css']
 })
-export class DisplayorderComponent implements OnInit {
-  supplierId : String;
+export class DisplayporderComponent implements OnInit {
+
+  distributorId : String;
   deliverystatus : String;
   startDate : String;
   endDate : String;
-  orders: RawMaterialOrder[] = [];
+  orders: ProductOrder[] = [];
   dis: boolean=false;
-  message:String;
-
   constructor(private service: ServiceService,private router: Router) { }
 
   ngOnInit(): void {
@@ -26,15 +25,15 @@ public displayOrder():void
   this.dis=true;
   console.log(this.startDate);
   console.log(this.endDate);
-  console.log(this.supplierId);
+  console.log(this.distributorId);
   console.log(this.deliverystatus);
 
- this.service.displayOrder(this.supplierId,this.deliverystatus,this.startDate,this.endDate).subscribe(data =>{
+ this.service.displaypOrder(this.distributorId,this.deliverystatus,this.startDate,this.endDate).subscribe(data =>{
                                                         for(var i of data.orders)
                                                         {
                                                             this.orders.push(i);
                                                         }
                                                         console.log(data.orders);
- },error => this.message =error.error);
+ }); 
 }
 }

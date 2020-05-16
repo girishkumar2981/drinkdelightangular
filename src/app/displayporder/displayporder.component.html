@@ -5,12 +5,12 @@
     <div class="form-group">
     <table align=center>
         <tr>
-            <th><h5 class="text-white">SUPPLIER ID</h5></th>
+            <th><h5 class="text-white">DISTRIBUTOR ID</h5></th>
             <td>
 			<div class="form-group">
-                <input type=text required #ord="ngModel" [class.is-invalid]="ord.touched && ord.invalid " name="supplierId" class="form-control" [(ngModel)]="supplierId">
+                <input type=text required #ord="ngModel" [class.is-invalid]="ord.touched && ord.invalid " name="distributorId" class="form-control" [(ngModel)]="distributorId">
                 <div *ngIf="ord.errors && ord.touched">
-                        <small class="text-danger"    *ngIf="ord.errors.required">SupplierId is required</small>
+                        <small class="text-danger"    *ngIf="ord.errors.required">DistributorId is required</small>
                     </div>
         </div>
             </td>
@@ -64,43 +64,38 @@
   <thead>
 	<tr>
 		<th>orderId</th>
-		<th>rawmaterialname</th>
+		<th>productname</th>
 		<th>priceperunit</th>
 		<th>quantityvalue</th>
         <th>totalprice</th>
 		<th>warehouseId</th>
-        <th>supplierId</th>
+        <th>distributorId</th>
         <th>dateoforder</th>
         <th>dateofdelivery</th>
         <th>manufacturingdate</th>
         <th>expirydate</th>
         <th>deliverystatus</th>
-        <th>rawmaterialid</th>
+        <th>productid</th>
 		
   </tr>
   </thead>
   <tbody>
 	<tr *ngFor="let t of orders">
 		<td>{{t.orderId}}</td>
-		<td>{{t.rawmaterialname}}</td>
+		<td>{{t.productname}}</td>
 		<td>{{t.priceperunit}}</td>
 		<td>{{t.quantityvalue}}</td>
 		<td>{{t.totalprice}}</td>
 		<td>{{t.warehouseId}}</td>
-        <td>{{t.supplierId}}</td>
+        <td>{{t.distributorId}}</td>
         <td>{{t.dateoforder}}</td>
         <td>{{t.dateofdelivery}}</td>
         <td>{{t.manufacturingdate}}</td>
         <td>{{t.expirydate}}</td>
         <td>{{t.deliverystatus}}</td>
-        <td>{{t.rawmaterialId}}</td>
+        <td>{{t.productId}}</td>
   </tr> 
   </tbody>
 </table>
   </div>
 </div>
-<table align=center>
-  <div class="container">
-    <h5 class="text-success">{{message}}</h5>
-  </div>
-</table>

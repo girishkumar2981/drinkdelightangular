@@ -13,6 +13,17 @@ import {FormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceService} from './service.service';
 import { RawmaterialspecsComponent } from './rawmaterialspecs/rawmaterialspecs.component';
+import { LoginComponent } from './login/login.component';
+import { HomepageComponent } from './homepage/homepage.component';
+import { ProductspecsComponent } from './productspecs/productspecs.component';
+import { UpdateporderComponent } from './updateporder/updateporder.component';
+import { DisplayporderComponent } from './displayporder/displayporder.component';
+import { TrackporderComponent } from './trackporder/trackporder.component';
+import { DisplaydistributorComponent } from './displaydistributor/displaydistributor.component';
+import { CoverComponent } from './cover/cover.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -24,6 +35,17 @@ import { RawmaterialspecsComponent } from './rawmaterialspecs/rawmaterialspecs.c
     TrackorderComponent,
     DisplaysupplierComponent,
     RawmaterialspecsComponent,
+    LoginComponent,
+    HomepageComponent,
+    ProductspecsComponent,
+    UpdateporderComponent,
+    DisplayporderComponent,
+    TrackporderComponent,
+    DisplaydistributorComponent,
+    CoverComponent,
+    
+ 
+   
   ],
   imports: [
     BrowserModule,

@@ -13,6 +13,7 @@ supplierId: string;
 order: DisplaySupplier[] = [];
   dis: boolean=false;
   orders: any;
+  message:String;
   constructor(private service: ServiceService,private router: Router) { }
 
   ngOnInit(): void {
@@ -21,7 +22,7 @@ public displaySupplier(): void
 {
 this.dis=true;
 console.log(this.supplierId);
-this.service.displaySupplier(this.supplierId).subscribe(data => this.orders=data);
+this.service.displaySupplier(this.supplierId).subscribe(data => this.orders=data,error => this.message =error.error);
   
 }
 }

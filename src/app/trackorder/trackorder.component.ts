@@ -12,6 +12,7 @@ orderId:number;
   dis: boolean=false;
   order: RawMaterialOrder[] = [];
   orders: any;
+  message:String;
   constructor(private service: ServiceService,private router: Router) { }
 
   ngOnInit(): void {
@@ -20,7 +21,7 @@ orderId:number;
   {
     this.dis=true;
     console.log(this.orderId);
-    this.service.trackOrder(this.orderId).subscribe(data => this.orders=data);
+    this.service.trackOrder(this.orderId).subscribe(data => this.orders=data,error => this.message =error.error);
     
   }
 

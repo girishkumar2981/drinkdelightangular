@@ -14,6 +14,7 @@ export class RawmaterialspecsComponent implements OnInit {
   renderer:boolean = false;
   rawmaterialspes:RawMaterialSpecs;
   quantityvalue : number;
+  message:String;
   constructor(private service: ServiceService,private router: Router) { }
 
   ngOnInit(): void {
@@ -38,7 +39,7 @@ export class RawmaterialspecsComponent implements OnInit {
 
   public placedorder():void
   {
-    this.service.placedorder1(this.rawmaterialspes,this.quantityvalue).subscribe(data => console.log(data));
+    this.service.placedorder1(this.rawmaterialspes,this.quantityvalue).subscribe(data => this.message =data);
   }
 
 }
